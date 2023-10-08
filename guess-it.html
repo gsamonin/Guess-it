@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Concentration</title>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.8.9/brython.min.js"></script>
+    <script
+    type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/brython@3.8.9/brython_stdlib.js">
+    </script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <style>
+        body {
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: monospace;
+        }
+
+        #container {
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            align-content: center;
+            justify-content: space-evenly;
+            align-items: stretch;
+        }
+
+        #console {
+            width: 800px;
+            height: 1000px;
+            border: 1px solid #ccc;
+            background-color: black;
+            overflow-y: scroll;
+            padding: 10px;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        #input {
+            width: 800px;
+            padding: 5px;
+            background-color: black;
+            color: white;
+        }
+        button.btn {
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+            padding: .8em 1em calc(.8em + 3px);
+            border-radius: 3px;
+            background: rgb(64,199,129);
+            box-shadow: 0 -3px rgb(53,167,110) inset;
+            transition: 0.2s;
+            margin-top: 10px;
+        } 
+        button.btn:hover { background: rgb(53, 167, 110); }
+        button.btn:active {
+            background: rgb(33,147,90);
+            box-shadow: 0 3px rgb(33,147,90) inset;
+        }
+</style>
+</head>
+<body onload="brython()">
+    <div id="container">
+        <h1 style="text-align: center;">Guess it</h1>
+        <div id="console"></div>
+        <input id="input" type="text" placeholder="DO YOU WANT INSTRUCTIONS? TYPE YES OR NO">
+        <button class="btn" onclick="reloadPage()">Restart game</button>
+    </div>
+<script type="text/python" src="guess-it.py">
+</script>
+<script>
+    function reloadPage() {
+        location.reload();
+    }
+</script>
+</body>
+</html>
